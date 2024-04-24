@@ -7,7 +7,7 @@ const dayOfTheWeek = (date = new Date()) => {
 const monthOfTheYear = (date = new Date()) => {
     const months = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    return months[date.getMonth()];
+    return months[date.getUTCMonth()];
 }
 
 try {
@@ -15,6 +15,8 @@ try {
     document.getElementById('month').innerText = monthOfTheYear();
 } catch(err) {}
 
+
+console.log("this month is" +monthOfTheYear(new Date("08/31/2022")));
 // 
 exports.dayOfTheWeek = dayOfTheWeek;
 exports.monthOfTheYear = monthOfTheYear;
